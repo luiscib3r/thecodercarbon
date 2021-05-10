@@ -15,8 +15,7 @@ async def get(
 ):
     data = request.query_params
     try:
-        code = data['code']
-        data["code"] = code.replace("\n", "%0d%0a")
+        data['code'].replace("\n", "%0d%0a")
     except KeyError:
         return {"error": "Code is required to create a Carbon!"}
 
