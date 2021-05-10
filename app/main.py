@@ -16,12 +16,13 @@ async def get(
     data = request.query_params
     try:
         code = data['code']
+        data["code"] = code.replace("\n", "%0d%0a")
     except KeyError:
         return {"error": "Code is required to create a Carbon!"}
 
     validatedBody = utility.validateBody(data)
     carbonURL = utility.createURLString(validatedBody)
-    path = f'{os.getcwd()}/{datetime.now().microsecond}.png'
+    path = f'/tmp/{datetime.now().microsecond}.png'
     await carbon.get_response(carbonURL, path)
     return FileResponse(path)
 
@@ -33,11 +34,12 @@ async def post(
     data = await request.json()
     try:
         code = data['code']
+        data["code"] = code.replace("\n", "%0d%0a")
     except KeyError:
         return {"error": "Code is required to create a Carbon!"}
 
     validatedBody = utility.validateBody(data)
     carbonURL = utility.createURLString(validatedBody)
-    path = f'{os.getcwd()}/{datetime.now().microsecond}.png'
+    path = f'/tmp/{datetime.now().microsecond}.png'
     await carbon.get_response(carbonURL, path)
     return FileResponse(path)

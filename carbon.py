@@ -2,7 +2,7 @@ import os
 from urllib import parse
 from pyppeteer import launch
 
-DOWNLOAD_FOLDER = os.getcwd()
+DOWNLOAD_FOLDER = "/tmp"
 
 
 async def open_carbonnowsh(url):

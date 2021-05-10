@@ -236,8 +236,8 @@ python-versions = ">=3.6.1"
 
 [metadata]
 lock-version = "1.1"
-python-versions = "^3.9"
-content-hash = "1d9ecd6fdc2f410b5bd72a19fbe9520fd60ac7f4258b7a58cc437683964213b1"
+python-versions = "^3.8"
+content-hash = "17f768f0c28c9d7278ed8dc4703f73a841e90e8772d9834e097336770e2067c0"
 
 [metadata.files]
 aiofiles = [
@@ -261,6 +261,7 @@ fastapi = [
     {file = "fastapi-0.64.0.tar.gz", hash = "sha256:9bbd7b7b9291bbc3bbd72cbc82f5d456369802dab0d142a85350b06c5c7e6379"},
 ]
 gunicorn = [
+    {file = "gunicorn-20.1.0-py3-none-any.whl", hash = "sha256:9dcc4547dbb1cb284accfb15ab5667a0e5d1881cc443e0677b4882a4067a807e"},
     {file = "gunicorn-20.1.0.tar.gz", hash = "sha256:e0a968b5ba15f8a328fdfd7ab1fcb5af4470c28aaf7e55df02a99bc13138e6e8"},
 ]
 h11 = [
