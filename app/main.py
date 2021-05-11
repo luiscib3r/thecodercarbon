@@ -5,6 +5,7 @@ from datetime import datetime
 from fastapi import FastAPI
 from fastapi.requests import Request
 from fastapi.responses import FileResponse
+import urllib
 
 app = FastAPI()
 
@@ -33,7 +34,7 @@ async def post(
     data = await request.json()
     try:
         code = data['code']
-        data["code"] = code.replace("\n", "%0d%0a")
+        data["code"] = urllib.parse.quote(code)
     except KeyError:
         return {"error": "Code is required to create a Carbon!"}
 
